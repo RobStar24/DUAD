@@ -1,0 +1,5 @@
+print("Hola mundo")
+print("Este es mi primer codigo")
+print(10 + 30)
+print(8 * 3)
+print(60 / 5)

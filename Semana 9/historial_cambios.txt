@@ -1,0 +1,5 @@
+1. En el primer commit se creo el repositorio unicamente con el README.md
+2. En el segundo commit se creo la rama past-excercises la cual contiene todos los entregables pasados
+3. En el tercer commit se creo la rama experimentacion y el archivo prueba.txt como se pidio en el ejercicio extra
+4. En el cuarto commit se creo la rama fix-errores-menores para añadir contenido a prueba.txt
+5. En el quinto commit se añade este ultimo archivo que es el historial de los logs de los cambios realizados en git.
