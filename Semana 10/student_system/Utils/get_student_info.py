@@ -13,7 +13,7 @@ def get_valid_grade(subject):
 def get_valid_name():
     while True:
         name = input("Enter student's full name: ")
-        if len(name) > 2 and all(char.isalpha() or char.isspace() for char in name)
+        if len(name) > 2 and all(char.isalpha() or char.isspace() for char in name):
             return name
         else:
             print("Error: Please enter a valid name.")
