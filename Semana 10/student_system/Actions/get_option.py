@@ -1,7 +1,7 @@
 def get_option():
     while True:
         try:
-            option = int(input("Select an option (1 - 7):"))
+            option = int(input("Select an option (1 - 7):\n"))
             if 1 <= option <= 7:
                 return option
             else:

@@ -1,4 +1,5 @@
 def show_menu():
+    print("=" * 48)
     print(
         "OPTIONS MENU:\n"
         "1. Enter student information\n"
