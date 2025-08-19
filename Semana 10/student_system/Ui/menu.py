@@ -11,4 +11,3 @@ def show_menu():
         "7. Exit"
     )
 
-# show_menu() 
