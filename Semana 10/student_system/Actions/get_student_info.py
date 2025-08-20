@@ -15,7 +15,7 @@ def get_valid_grade(subject):
 
 def get_valid_name():
     while True:
-        name = input("Enter student's full name: ")
+        name = input("Enter student's full name: ").strip()
         if len(name) > 2 and all(char.isalpha() or char.isspace() for char in name):
             return name
         else:
@@ -40,23 +40,39 @@ def calculate_average(grades):
     return sum(grades.values()) / len(grades)
 
 
+def student_exist(name, section, students):
+    for student in students:
+        if student["name"].lower() == name.lower() and student["section"] == section:
+            return True
+    return False
 
-def get_student_info():
-    name = get_valid_name()
-    section = get_valid_section()
 
-    subjects = ["Spanish", "English", "Social Studies", "Science"]
+def get_student_info(students):
+    while True:
+        name = get_valid_name()
+        section = get_valid_section()
 
-    grades = {}
+        if student_exist(name, section, students):
+            print(
+                f"Error: A student with name '{name}' in section '{section}' already exists.\n"
+            )
+            print("Please enter a different name or section.\n")
+            continue
 
-    for subject in subjects:
-        grades[subject] = get_valid_grade(subject)
+        subjects = ["Spanish", "English", "Social Studies", "Science"]
 
-    average = calculate_average(grades)
+        grades = {}
 
-    return {
-        'name': name,
-        'section': section,
-        'grades': grades,
-        'average': average
-    }
+        for subject in subjects:
+            grades[subject] = get_valid_grade(subject)
+
+        average = calculate_average(grades)
+
+        student_data = {
+            "name": name,
+            "section": section,
+            "grades": grades,
+            "average": average,
+        }
+
+        return student_data

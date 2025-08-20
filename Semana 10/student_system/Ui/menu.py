@@ -1,5 +1,5 @@
 def show_menu():
-    print("=" * 48)
+    print("=" * 60)
     print(
         "OPTIONS MENU:\n"
         "1. Enter student information\n"
@@ -8,6 +8,7 @@ def show_menu():
         "4. View the average grade of all students\n"
         "5. Export data to a CSV file\n"
         "6. Import data from a CSV file\n"
-        "7. Exit"
+        "7. Remove a student\n"
+        "8. Show failing students\n"
+        "9. Exit"
     )
-
