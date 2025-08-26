@@ -9,7 +9,7 @@ class Student:
         self.average = sum(grades.values()) / len(grades)
 
 
-def import_from_csv(filename="students.cvs"):
+def import_from_csv(filename="students.csv"):
     students = []
 
     try:

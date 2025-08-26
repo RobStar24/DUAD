@@ -1,7 +1,7 @@
 import csv
 
 
-def import_from_csv(filename="students.cvs"):
+def import_from_csv(filename="students.csv"):
     students = []
 
     try:

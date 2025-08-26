@@ -1,7 +1,7 @@
 import csv
 
 
-def export_to_cvs(students, filename="students.cvs"):
+def export_to_cvs(students, filename="students.csv"):
     if not students:
         print("No students to export.")
     else:
