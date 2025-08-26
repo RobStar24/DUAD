@@ -1,6 +1,14 @@
 import re
 
 
+class Student:
+    def __init__(self, name, section, grades):
+        self.name = name
+        self.section = section
+        self.grades = grades
+        self.average = sum(grades.values()) / len(grades)
+
+
 def get_valid_grade(subject):
     while True:
         try:
@@ -36,13 +44,9 @@ def get_valid_section():
             print("Invalid format. Please enter a valid section like '9C' or '10A'.")
 
 
-def calculate_average(grades):
-    return sum(grades.values()) / len(grades)
-
-
 def student_exist(name, section, students):
     for student in students:
-        if student["name"].lower() == name.lower() and student["section"] == section:
+        if student.name.lower() == name.lower() and student.section == section:
             return True
     return False
 
@@ -60,19 +64,11 @@ def get_student_info(students):
             continue
 
         subjects = ["Spanish", "English", "Social Studies", "Science"]
-
         grades = {}
 
         for subject in subjects:
             grades[subject] = get_valid_grade(subject)
 
-        average = calculate_average(grades)
+        student = Student(name, section, grades)
 
-        student_data = {
-            "name": name,
-            "section": section,
-            "grades": grades,
-            "average": average,
-        }
-
-        return student_data
+        return student

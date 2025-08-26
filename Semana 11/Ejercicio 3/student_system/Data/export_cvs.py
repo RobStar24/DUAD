@@ -20,13 +20,13 @@ def export_to_cvs(students, filename="students.cvs"):
 
             for student in students:
                 student_data = {
-                    "Name": student["name"],
-                    "Section": student["section"],
-                    "Spanish": student["grades"]["Spanish"],
-                    "English": student["grades"]["English"],
-                    "Social Studies": student["grades"]["Social Studies"],
-                    "Science": student["grades"]["Science"],
-                    "Average": student["average"],
+                    "Name": student.name,
+                    "Section": student.section,
+                    "Spanish": student.grades.get("Spanish", 0),
+                    "English": student.grades.get("English", 0),
+                    "Social Studies": student.grades("Social Studies", 0),
+                    "Science": student.grades("Science", 0),
+                    "Average": student.average,
                 }
                 writer.writerow(student_data)
 

@@ -1,6 +1,14 @@
 import csv
 
 
+class Student:
+    def __init__(self, name, section, grades):
+        self.name = name
+        self.section = section
+        self.grades = grades
+        self.average = sum(grades.values()) / len(grades)
+
+
 def import_from_csv(filename="students.cvs"):
     students = []
 
@@ -8,17 +16,17 @@ def import_from_csv(filename="students.cvs"):
         with open(filename, mode="r", newline="") as file:
             reader = csv.DictReader(file)
             for row in reader:
-                student = {
-                    "name": row["Name"],
-                    "section": row["Section"],
-                    "grades": {
-                        "Spanish": int(row["Spanish"]),
-                        "English": int(row["English"]),
-                        "Social Studies": int(row["Social Studies"]),
-                        "Science": int(row["Science"]),
-                    },
-                    "average": float(row["Average"]),
+                grades = {
+                    "Spanish": int(row["Spanish"]),
+                    "English": int(row["English"]),
+                    "Social Studies": int(row["Social Studies"]),
+                    "Science": int(row["Science"]),
                 }
+
+                student = Student(
+                    name=row["Name"], section=row["Section"], grades=grades
+                )
+
                 students.append(student)
 
         print(f"Data has been successfully imported from {filename}")
