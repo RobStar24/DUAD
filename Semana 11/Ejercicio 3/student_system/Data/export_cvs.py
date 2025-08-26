@@ -24,8 +24,8 @@ def export_to_cvs(students, filename="students.cvs"):
                     "Section": student.section,
                     "Spanish": student.grades.get("Spanish", 0),
                     "English": student.grades.get("English", 0),
-                    "Social Studies": student.grades("Social Studies", 0),
-                    "Science": student.grades("Science", 0),
+                    "Social Studies": student.grades.get("Social Studies", 0),
+                    "Science": student.grades.get("Science", 0),
                     "Average": student.average,
                 }
                 writer.writerow(student_data)

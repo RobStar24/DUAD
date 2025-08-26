@@ -3,15 +3,15 @@ def show_failing_students(students):
 
     for student in students:
         failed_subjects = []
-        for subject, grade in student["grades"].items():
+        for subject, grade in student.grades.items():
             if grade < 60:
                 failed_subjects.append((subject, grade))
 
         if failed_subjects:
             failing_students.append(
                 {
-                    "name": student["name"],
-                    "section": student["section"],
+                    "name": student.name,
+                    "section": student.section,
                     "failed_subjects": failed_subjects,
                 }
             )

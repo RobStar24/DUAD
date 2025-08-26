@@ -2,10 +2,7 @@ def remove_student(students, name, section):
     student_to_remove = None
 
     for student in students:
-        if (
-            student["name"].lower() == name.lower()
-            and student["section"] == section.upper()
-        ):
+        if student.name.lower() == name.lower() and student.section == section.upper():
             student_to_remove = student
             break
 
