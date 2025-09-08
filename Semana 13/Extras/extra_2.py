@@ -1,30 +1,26 @@
-user_logged_in = False
-
-
 def requires_login(func):
-    def wrapper(*args, **kwargs):
+    def wrapper(user_logged_in, *args, **kwargs):
         if not user_logged_in:
-            raise Exception("User not authenticated")
-        return func(*args, **kwargs)
+            raise PermissionError("User not authenticated")
+        return func(user_logged_in, *args, **kwargs)
 
     return wrapper
 
 
 @requires_login
-def view_profile():
+def view_profile(user_logged_in):
     print("Showing user profile")
 
 
+user_logged_in = True
 try:
-    view_profile()
-except Exception as ex:
+    view_profile(user_logged_in)
+except PermissionError as ex:
     print(ex)
 
 
-user_logged_in = True
-
-
+user_logged_in = False
 try:
-    view_profile()
-except Exception as ex:
+    view_profile(user_logged_in)
+except PermissionError as ex:
     print(ex)
