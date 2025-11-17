@@ -1,0 +1,4 @@
+1. Analice el algoritmo de bubble_sort usando la Big O Notation.
+    El Bubble sort es O(n**2) porque el algoritmo recorre la lista repetidamente mediante tiene un ciclo anidado.
+    Cada pasada requiere comparar n cantidad de veces, y el proceso se repite tambien n veces, lo que resulta en
+    una complejidad cuadratica.
